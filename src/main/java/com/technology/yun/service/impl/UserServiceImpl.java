@@ -1,6 +1,7 @@
 package com.technology.yun.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.technology.yun.db.dao.UserDao;
 import com.technology.yun.db.dao.UserMapper;
 import com.technology.yun.db.model.User;
 import com.technology.yun.service.UserService;
@@ -18,11 +19,14 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private UserDao userDao;
 
 
     @Override
     public User getUserById(Long id) {
-        return userMapper.selectById(id);
+        User ckz = userDao.findUserByNickname("ckz");
+        return ckz;
     }
 
     @Override
