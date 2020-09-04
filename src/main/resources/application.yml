@@ -16,5 +16,15 @@ spring:
   data:
     mongodb:
       uri: mongodb://192.168.1.189:27017/yun
+  rabbitmq:
+    addresses: 127.0.0.1
+    host: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    # 手动确认消息
+#    listener:
+#      simple:
+#        acknowledge-mode: manual
 server:
   port: 8080
